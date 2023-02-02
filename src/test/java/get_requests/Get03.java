@@ -30,12 +30,12 @@ public class Get03 extends base_urls.JsonPlaceHolderBaseUrl {
 
             //1.Step: Set the Url
             //String url = "https://jsonplaceholder.typicode.com/todos/23";//This is not recommended
-            specJsonPlaceHolderBaseUrl.pathParams("first","todos","second","23");
+            specJsonPlaceHolder.pathParams("first","todos","second","23");
 
             //2.Set the Expected Data
 
             //3.Step: Send the Request and Get the Response
-            Response response = given().spec(specJsonPlaceHolderBaseUrl).when().get("/{first}/{second}");
+            Response response = given().spec(specJsonPlaceHolder).when().get("/{first}/{second}");
             response.prettyPrint();
             //4.Step: Do Assertions
             //1.Way:
