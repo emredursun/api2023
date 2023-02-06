@@ -4,8 +4,8 @@ import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.junit.Test;
 
-import static io.restassured.RestAssured.*;
-import static org.hamcrest.Matchers.*;
+import static io.restassured.RestAssured.given;
+import static org.hamcrest.Matchers.equalTo;
 
 public class Get03 extends base_urls.JsonPlaceHolderBaseUrl {
         /*
@@ -30,12 +30,12 @@ public class Get03 extends base_urls.JsonPlaceHolderBaseUrl {
 
             //1.Step: Set the Url
             //String url = "https://jsonplaceholder.typicode.com/todos/23";//This is not recommended
-            specJsonPlaceHolder.pathParams("first","todos","second","23");
+            spec.pathParams("first","todos","second","23");
 
             //2.Set the Expected Data
 
             //3.Step: Send the Request and Get the Response
-            Response response = given().spec(specJsonPlaceHolder).when().get("/{first}/{second}");
+            Response response = given().spec(spec).when().get("/{first}/{second}");
             response.prettyPrint();
             //4.Step: Do Assertions
             //1.Way:

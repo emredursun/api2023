@@ -23,7 +23,7 @@ public class API_PostRequest extends JsonPlaceHolderBaseUrl {
 
         //1.Step: Set the Url
         String url = "https://jsonplaceholder.typicode.com/posts";
-        specJsonPlaceHolder.pathParams("first","posts");
+        spec.pathParams("first","posts");
 
         JSONObject reqBody = new JSONObject();
 

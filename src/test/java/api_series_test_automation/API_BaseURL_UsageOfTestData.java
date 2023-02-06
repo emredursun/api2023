@@ -1,16 +1,15 @@
 package api_series_test_automation;
 
-import TestDataStore.JsonPlaceHolderTestData;
+import test_data.JsonPlaceHolderTestData;
 import base_urls.JsonPlaceHolderBaseUrl;
 import io.restassured.http.ContentType;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import org.json.JSONObject;
-import org.junit.Assert;
 import org.junit.Test;
 
-import static io.restassured.RestAssured.*;
-import static org.junit.Assert.*;
+import static io.restassured.RestAssured.given;
+import static org.junit.Assert.assertEquals;
 
 public class API_BaseURL_UsageOfTestData extends JsonPlaceHolderBaseUrl {
 
@@ -27,7 +26,7 @@ public class API_BaseURL_UsageOfTestData extends JsonPlaceHolderBaseUrl {
         // 1 - URL ve Request Body olusturma
         // BaseURL: http://jsonplaceholder.typicode.com  and path params: /posts/101
 
-        specJsonPlaceHolder.pathParams("first","posts", "second",22);
+        spec.pathParams("first","posts", "second",22);
 
         // 2 - Expected Data Olustur
         JsonPlaceHolderTestData jsonPlaceHolder = new JsonPlaceHolderTestData();
@@ -37,7 +36,7 @@ public class API_BaseURL_UsageOfTestData extends JsonPlaceHolderBaseUrl {
 
         // 3 - Response kaydet
 
-        Response response = given().spec(specJsonPlaceHolder).when().get("{first}/{second}");
+        Response response = given().spec(spec).when().get("{first}/{second}");
 
         // 4 - Assertion
 
@@ -62,7 +61,7 @@ public class API_BaseURL_UsageOfTestData extends JsonPlaceHolderBaseUrl {
 
         //1.Step: Set the Url
         // Post url: "https://jsonplaceholder.typicode.com/posts";
-        specJsonPlaceHolder.pathParams("first","posts");
+        spec.pathParams("first","posts");
         //2.Set the Expected Data
         JsonPlaceHolderTestData jsonPlaceHolder = new JsonPlaceHolderTestData();
 
@@ -71,7 +70,7 @@ public class API_BaseURL_UsageOfTestData extends JsonPlaceHolderBaseUrl {
 
         //3.Step: Send the Request and Get the Response
         Response response = given().
-                spec(specJsonPlaceHolder).
+                spec(spec).
                 contentType(ContentType.JSON).
                 body(reqBody).
                 when().

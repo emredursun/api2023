@@ -24,7 +24,7 @@ public class API_GetRequest extends JsonPlaceHolderBaseUrl {
         * */
 
         //1.Step: Set the Url with endpoint: /posts/44
-        specJsonPlaceHolder.pathParams("first","posts","second","44");
+        spec.pathParams("first","posts","second","44");
 
         //2.Set the Expected Data
         JSONObject expBody = new JSONObject();
@@ -34,7 +34,7 @@ public class API_GetRequest extends JsonPlaceHolderBaseUrl {
         expBody.put("body", "temporibus est consectetur dolore\\net libero debitis vel velit laboriosam quia\\nipsum quibusdam qui itaque fuga rem aut\\nea et iure quam sed maxime ut distinctio quae");
 
         //3.Step: Send the Request and Get the Response
-        Response response = given().spec(specJsonPlaceHolder).when().get("/{first}/{second}");
+        Response response = given().spec(spec).when().get("/{first}/{second}");
         response.prettyPrint();
 
         //4.Step: Do Assertions
