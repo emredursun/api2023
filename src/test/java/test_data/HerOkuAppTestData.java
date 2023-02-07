@@ -4,22 +4,25 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class HerOkuAppTestData {
-    public Map<String, String> bookingDateSetUp(String checkin, String checkout){
-        Map<String, String> bookingdatesMap = new HashMap<>();
-        bookingdatesMap.put("checkin", checkin);
-        bookingdatesMap.put("checkout", checkout);
 
-        return bookingdatesMap;
+    public Map<String, String> bookingDateSetUp(String checkin, String checkout){
+
+        Map<String, String> bookingDateMap = new HashMap<>();
+        bookingDateMap.put("checkin", checkin);
+        bookingDateMap.put("checkout", checkout);
+        return bookingDateMap;
     }
 
-    public Map<String, Object> expectedDataSetUp(String firstname, String lastname, Integer totalprice, Boolean depositpaid,Map<String, String> bookingdates){
-        Map<String, Object> expectedData = new HashMap<>();
-        expectedData.put("firstname", firstname);
-        expectedData.put("lastname", lastname);
-        expectedData.put("totalprice", totalprice);
-        expectedData.put("depositpaid", depositpaid);
-        expectedData.put("bookingdates", bookingdates);
+    public Map<String, Object> expectedDataSetUp(String firstname, String lastname, int totalprice, boolean depoaitpaid,  Map<String, String> bookingdates){
 
-        return expectedData;
+        Map<String, Object> expectedDataMap = new HashMap<>();
+        expectedDataMap.put("firstname", firstname);
+        expectedDataMap.put("lastname", lastname);
+        expectedDataMap.put("totalprice", totalprice);
+        expectedDataMap.put("depoaitpaid", depoaitpaid);
+        expectedDataMap.put("bookingdates", bookingdates);
+
+        return expectedDataMap;
+
     }
 }

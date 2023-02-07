@@ -29,7 +29,7 @@ public class Get14ObjectMapper extends JsonPlaceHolderBaseUrl {
 									  }
      */
     @Test
-    public void get01ObjectMapper(){
+    public void get01ObjectMapper() {
         //1.Step: Set the URL
         spec.pathParams("first", "todos", "second", 198);
 
@@ -52,7 +52,7 @@ public class Get14ObjectMapper extends JsonPlaceHolderBaseUrl {
     }
 
     @Test //This is the best
-    public void get02ObjectMapper(){
+    public void get02ObjectMapper() {
 
         //1.Step: Set the URL
         spec.pathParams("first", "todos", "second", 198);
