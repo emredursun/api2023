@@ -43,7 +43,7 @@ public class Get09 extends HerOkuAppBaseUrl {
 //        bookingdatesMap.put("checkin", "2020-10-28");
 //        bookingdatesMap.put("checkout", "2021-04-30");
 
-        Map<String, Object> expectedData = dataKey.expectedDataSetUp("Sally","Smith", 404, false, bookingdatesMap);
+        Map<String, Object> expectedData = dataKey.expectedDataSetUp("Sally","Smith", 404, false, bookingdatesMap, "Lunch");
 //        expectedData.put("firstname","Jim");
 //        expectedData.put("lastname","Jackson");
 //        expectedData.put("totalprice", 901);
@@ -62,6 +62,7 @@ public class Get09 extends HerOkuAppBaseUrl {
         assertEquals(expectedData.get("lastname"),actualDataMap.get("lastname"));
         assertEquals(expectedData.get("totalprice"),actualDataMap.get("totalprice"));
         assertEquals(expectedData.get("depositpaid"),actualDataMap.get("depositpaid"));
+        assertEquals(expectedData.get("additionalneeds"),actualDataMap.get("additionalneeds"));
 
 
         assertEquals(bookingdatesMap.get("checkin"),((Map)actualDataMap.get("bookingdates")).get("checkin"));

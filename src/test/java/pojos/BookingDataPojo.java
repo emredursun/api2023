@@ -3,7 +3,7 @@ package pojos;
 import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class BookingPojo {
+public class BookingDataPojo {
 
     //1)Create private variables for every key
     private String firstname;
@@ -14,7 +14,7 @@ public class BookingPojo {
     private String additionalneeds;
 
     //2)Create constructor with all parameters, and without any parameter
-    public BookingPojo(String firstname, String lastname, Integer totalprice, Boolean depositpaid, BookingDatesPojo bookingdates, String additionalneeds) {
+    public BookingDataPojo(String firstname, String lastname, Integer totalprice, Boolean depositpaid, BookingDatesPojo bookingdates, String additionalneeds) {
         this.firstname = firstname;
         this.lastname = lastname;
         this.totalprice = totalprice;
@@ -23,7 +23,7 @@ public class BookingPojo {
         this.additionalneeds = additionalneeds;
     }
 
-    public BookingPojo() {
+    public BookingDataPojo() {
     }
 
     //3)Create getters and setters

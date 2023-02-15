@@ -7,11 +7,11 @@ public class BookingResponseBodyPojo {
 
     //1)Create private variables for every key
     private Integer bookingid;
-    private BookingPojo booking;
+    private BookingDataPojo booking;
 
     //2)Create constructor with all parameters, and without any parameter
 
-    public BookingResponseBodyPojo(Integer bookingid, BookingPojo booking) {
+    public BookingResponseBodyPojo(Integer bookingid, BookingDataPojo booking) {
         this.bookingid = bookingid;
         this.booking = booking;
     }
@@ -28,11 +28,11 @@ public class BookingResponseBodyPojo {
         this.bookingid = bookingid;
     }
 
-    public BookingPojo getBooking() {
+    public BookingDataPojo getBooking() {
         return booking;
     }
 
-    public void setBooking(BookingPojo booking) {
+    public void setBooking(BookingDataPojo booking) {
         this.booking = booking;
     }
 

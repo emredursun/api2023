@@ -4,7 +4,7 @@ import base_urls.HerOkuAppBaseUrl;
 import io.restassured.response.Response;
 import org.junit.Test;
 import org.testng.asserts.SoftAssert;
-import pojos.BookingPojo;
+import pojos.BookingDataPojo;
 import utils.JsonUtil;
 
 import static io.restassured.RestAssured.given;
@@ -49,13 +49,13 @@ public class Get15ObjectMapper extends HerOkuAppBaseUrl {
                 "},\n" +
                 "\"additionalneeds\": \"Breakfast\"\n" +
                 "}";
-        BookingPojo expectedDataPojo = JsonUtil.convertJsonToJavaObject(expectedData, BookingPojo.class);
+        BookingDataPojo expectedDataPojo = JsonUtil.convertJsonToJavaObject(expectedData, BookingDataPojo.class);
 
         //3.Step: Send GET Request and get the Response
         Response response = given().spec(spec).when().get("/{first}/{second}");
 
         //4.Step: Do Assertions
-        BookingPojo actualDataPojo = JsonUtil.convertJsonToJavaObject(response.asString(), BookingPojo.class);
+        BookingDataPojo actualDataPojo = JsonUtil.convertJsonToJavaObject(response.asString(), BookingDataPojo.class);
 
         assertEquals(200, response.getStatusCode());
 

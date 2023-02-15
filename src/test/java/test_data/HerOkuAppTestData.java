@@ -13,14 +13,15 @@ public class HerOkuAppTestData {
         return bookingDateMap;
     }
 
-    public Map<String, Object> expectedDataSetUp(String firstname, String lastname, int totalprice, boolean depoaitpaid,  Map<String, String> bookingdates){
+    public Map<String, Object> expectedDataSetUp(String firstname, String lastname, int totalprice, boolean depositpaid,  Map<String, String> bookingdates, String additionalneeds){
 
         Map<String, Object> expectedDataMap = new HashMap<>();
         expectedDataMap.put("firstname", firstname);
         expectedDataMap.put("lastname", lastname);
         expectedDataMap.put("totalprice", totalprice);
-        expectedDataMap.put("depoaitpaid", depoaitpaid);
+        expectedDataMap.put("depositpaid", depositpaid);
         expectedDataMap.put("bookingdates", bookingdates);
+        expectedDataMap.put("additionalneeds", additionalneeds);
 
         return expectedDataMap;
 

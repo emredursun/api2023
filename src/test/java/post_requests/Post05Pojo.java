@@ -5,7 +5,7 @@ import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.junit.Test;
 import pojos.BookingDatesPojo;
-import pojos.BookingPojo;
+import pojos.BookingDataPojo;
 import pojos.BookingResponseBodyPojo;
 
 import static io.restassured.RestAssured.given;
@@ -55,24 +55,24 @@ public class Post05Pojo extends HerOkuAppBaseUrl {
 
         //2.Step: Set the Expected Data
         BookingDatesPojo bookingDates = new BookingDatesPojo("2021-09-21", "2021-12-21");
-        BookingPojo bookingPojo = new BookingPojo("Ali", "Can", 999, true, bookingDates, "Breakfast with white tea, Dragon juice");
+        BookingDataPojo bookingDataPojo = new BookingDataPojo("Ali", "Can", 999, true, bookingDates, "Breakfast with white tea, Dragon juice");
 
         //3.Step:Send POST Request and get the Response
-        Response response = given().spec(spec).contentType(ContentType.JSON).body(bookingPojo).when().post("/{first}");
+        Response response = given().spec(spec).contentType(ContentType.JSON).body(bookingDataPojo).when().post("/{first}");
 
         //4.Step: Do Assertions
         BookingResponseBodyPojo actualPojo = response.as(BookingResponseBodyPojo.class);
 
         assertEquals(200, response.getStatusCode());
 
-        assertEquals(bookingPojo.getFirstname(), actualPojo.getBooking().getFirstname());
-        assertEquals(bookingPojo.getLastname(), actualPojo.getBooking().getLastname());
-        assertEquals(bookingPojo.getTotalprice(), actualPojo.getBooking().getTotalprice());
-        assertEquals(bookingPojo.getDepositpaid(), actualPojo.getBooking().getDepositpaid());
+        assertEquals(bookingDataPojo.getFirstname(), actualPojo.getBooking().getFirstname());
+        assertEquals(bookingDataPojo.getLastname(), actualPojo.getBooking().getLastname());
+        assertEquals(bookingDataPojo.getTotalprice(), actualPojo.getBooking().getTotalprice());
+        assertEquals(bookingDataPojo.getDepositpaid(), actualPojo.getBooking().getDepositpaid());
 
         //1.Way: Can be used
-        assertEquals(bookingPojo.getBookingdates().getCheckin(), actualPojo.getBooking().getBookingdates().getCheckin());
-        assertEquals(bookingPojo.getBookingdates().getCheckout(), actualPojo.getBooking().getBookingdates().getCheckout());
+        assertEquals(bookingDataPojo.getBookingdates().getCheckin(), actualPojo.getBooking().getBookingdates().getCheckin());
+        assertEquals(bookingDataPojo.getBookingdates().getCheckout(), actualPojo.getBooking().getBookingdates().getCheckout());
 
         //2.Way: Recommended
         assertEquals(bookingDates.getCheckin(), actualPojo.getBooking().getBookingdates().getCheckin());
