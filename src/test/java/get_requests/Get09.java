@@ -1,9 +1,9 @@
 package get_requests;
 
-import test_data.HerOkuAppTestData;
 import base_urls.HerOkuAppBaseUrl;
 import io.restassured.response.Response;
 import org.junit.Test;
+import test_data.HerOkuAppTestData;
 
 import java.util.HashMap;
 import java.util.Map;

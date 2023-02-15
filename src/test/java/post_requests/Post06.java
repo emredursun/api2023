@@ -8,7 +8,7 @@ import pojos.DummyApiDataPojo;
 import pojos.DummyApiResponseBodyPojo;
 import utils.JsonUtil;
 
-import static io.restassured.RestAssured.*;
+import static io.restassured.RestAssured.given;
 import static org.junit.Assert.assertEquals;
 
 public class Post06 extends DummyRestApiBaseUrl {

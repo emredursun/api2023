@@ -5,8 +5,8 @@ import io.restassured.http.ContentType;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import org.junit.Test;
-import pojos.BookingDatesPojo;
 import pojos.BookingDataPojo;
+import pojos.BookingDatesPojo;
 import pojos.BookingResponseBodyPojo;
 import test_data.HerOkuAppTestData;
 import utils.JsonUtil;
@@ -158,14 +158,14 @@ public class Post07 extends HerOkuAppBaseUrl {
         //1.Way:
         Map<String, Object> actualDataMap = response.as(HashMap.class);
 
-        assertEquals(expectedDataMap.get("firstname"), ((Map)actualDataMap.get("booking")).get("firstname"));
-        assertEquals(expectedDataMap.get("lastname"), ((Map)actualDataMap.get("booking")).get("lastname"));
-        assertEquals(expectedDataMap.get("totalprice"), ((Map)actualDataMap.get("booking")).get("totalprice"));
-        assertEquals(expectedDataMap.get("lastname"), ((Map)actualDataMap.get("booking")).get("lastname"));
-        assertEquals(expectedDataMap.get("depositpaid"), ((Map)actualDataMap.get("booking")).get("depositpaid"));
-        assertEquals(bookingDatesMap.get("checkin"), ((Map)((Map)actualDataMap.get("booking")).get("bookingdates")).get("checkin"));
-        assertEquals(bookingDatesMap.get("checkout"), ((Map)((Map)actualDataMap.get("booking")).get("bookingdates")).get("checkout"));
-        assertEquals(expectedDataMap.get("additionalneeds"), ((Map)actualDataMap.get("booking")).get("additionalneeds"));
+        assertEquals(expectedDataMap.get("firstname"), ((Map) actualDataMap.get("booking")).get("firstname"));
+        assertEquals(expectedDataMap.get("lastname"), ((Map) actualDataMap.get("booking")).get("lastname"));
+        assertEquals(expectedDataMap.get("totalprice"), ((Map) actualDataMap.get("booking")).get("totalprice"));
+        assertEquals(expectedDataMap.get("lastname"), ((Map) actualDataMap.get("booking")).get("lastname"));
+        assertEquals(expectedDataMap.get("depositpaid"), ((Map) actualDataMap.get("booking")).get("depositpaid"));
+        assertEquals(bookingDatesMap.get("checkin"), ((Map) ((Map) actualDataMap.get("booking")).get("bookingdates")).get("checkin"));
+        assertEquals(bookingDatesMap.get("checkout"), ((Map) ((Map) actualDataMap.get("booking")).get("bookingdates")).get("checkout"));
+        assertEquals(expectedDataMap.get("additionalneeds"), ((Map) actualDataMap.get("booking")).get("additionalneeds"));
 
         //2.Way:
         JsonPath json = response.jsonPath();

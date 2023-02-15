@@ -6,7 +6,7 @@ import org.junit.Test;
 import pojos.GoRestDataPojo;
 import pojos.GoRestResponseBodyPojo;
 
-import static io.restassured.RestAssured.*;
+import static io.restassured.RestAssured.given;
 import static org.junit.Assert.assertEquals;
 
 public class Get13Pojo extends GoRestBaseUrl {
