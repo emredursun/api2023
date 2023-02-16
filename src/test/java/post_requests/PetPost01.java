@@ -7,13 +7,10 @@ import org.junit.Test;
 import pojos.*;
 import utils.JsonUtil;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import static io.restassured.RestAssured.given;
 import static org.junit.Assert.assertEquals;
 
-public class PetStorePost extends PetStoreBaseUrl {
+public class PetPost01 extends PetStoreBaseUrl {
      /*
             Given
             https://petstore.swagger.io/v2/pet
@@ -66,13 +63,13 @@ public class PetStorePost extends PetStoreBaseUrl {
         spec.pathParam("first","pet");
 
         //2.Step: Set the Expected Data
-        PetStoreCategoryPojo petStoreCategory = new PetStoreCategoryPojo(3, "Köpek Cinsleri");
+        PetCategoryPojo petStoreCategory = new PetCategoryPojo(3, "Köpek Cinsleri");
         //PetStoreTagPojo petStoreTag = new PetStoreTagPojo(5, "Küçük köpek ırkı");
-        PetStoreResponseBodyPojo petStoreResponseBody = new PetStoreResponseBodyPojo(petStoreCategory, "Yorkshire Terrier", "available");
+        PetResponseBodyPojo petStoreResponseBody = new PetResponseBodyPojo(petStoreCategory, "Yorkshire Terrier", "available");
 
         //3.Step:Send POST Request and get the Response
         Response response = given().spec(spec).contentType(ContentType.JSON).body(petStoreResponseBody).when().post("/{first}");
-        PetStoreResponseBodyPojo actualPetStoreResponseBody = JsonUtil.convertJsonToJavaObject(response.asString(), PetStoreResponseBodyPojo.class);
+        PetResponseBodyPojo actualPetStoreResponseBody = JsonUtil.convertJsonToJavaObject(response.asString(), PetResponseBodyPojo.class);
         response.prettyPrint();
 
         //4.Step: Do Assertion

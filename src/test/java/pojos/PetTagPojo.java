@@ -3,15 +3,15 @@ package pojos;
 import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class PetStoreTagPojo {
+public class PetTagPojo {
 
     private Integer id;
     private String name;
 
-    public PetStoreTagPojo() {
+    public PetTagPojo() {
     }
 
-    public PetStoreTagPojo(Integer id, String name) {
+    public PetTagPojo(Integer id, String name) {
         this.id = id;
         this.name = name;
     }

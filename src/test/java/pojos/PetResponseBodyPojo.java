@@ -2,34 +2,32 @@ package pojos;
 
 import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 
-import java.util.List;
-
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class PetStoreResponseBodyPojo {
+public class PetResponseBodyPojo {
 
-    private PetStoreCategoryPojo petStoreCategoryPojo;
+    private PetCategoryPojo petCategoryPojo;
     private String name;
     //private List<String> photoUrls;
     //private List<PetStoreTagPojo> petStoreTagPojos;
     private String status;
 
-    public PetStoreResponseBodyPojo() {
+    public PetResponseBodyPojo() {
     }
 
-    public PetStoreResponseBodyPojo(PetStoreCategoryPojo petStoreCategoryPojo, String name, String status) {
-        this.petStoreCategoryPojo = petStoreCategoryPojo;
+    public PetResponseBodyPojo(PetCategoryPojo petCategoryPojo, String name, String status) {
+        this.petCategoryPojo = petCategoryPojo;
         this.name = name;
         //this.photoUrls = photoUrls;
         //this.petStoreTagPojos = petStoreTagPojos;
         this.status = status;
     }
 
-    public PetStoreCategoryPojo getCategory() {
-        return petStoreCategoryPojo;
+    public PetCategoryPojo getCategory() {
+        return petCategoryPojo;
     }
 
-    public void setCategory(PetStoreCategoryPojo petStoreCategoryPojo) {
-        this.petStoreCategoryPojo = petStoreCategoryPojo;
+    public void setCategory(PetCategoryPojo petCategoryPojo) {
+        this.petCategoryPojo = petCategoryPojo;
     }
 
     public String getName() {
@@ -67,7 +65,7 @@ public class PetStoreResponseBodyPojo {
     @Override
     public String toString() {
         return "PetStoreResponseBodyPojo{" +
-                "category=" + petStoreCategoryPojo +
+                "category=" + petCategoryPojo +
                 ", name='" + name + '\'' +
 //               ", photoUrls=" + photoUrls +
 //                ", tags=" + petStoreTagPojos +
